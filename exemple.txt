@@ -1,0 +1,311 @@
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import style from "./style.module.css"
+import styled, { createGlobalStyle } from "styled-components"
+import "./conteudo.css"
+
+function Header() {
+  return (
+    <header className={style.header}>
+      <h1>LooKomic</h1>
+      <menu>Notificações</menu>
+    </header>
+  )
+}
+
+function Footer() {
+  return (
+    <footer className={style.footer}>
+      <nav className={style.nav}>
+        <Link to="/">home</Link>
+        <Link to="/search">search</Link>
+        <Link to="/upload">upload</Link>
+        <Link to="/notify">notify</Link>
+      </nav>
+    </footer>
+  )
+}
+
+function Main({ children }) {
+  return (
+    <main className={style.main}>
+      <h3> {children ? children : "Aqui fica o conteudo principal"} </h3>
+    </main>
+  )
+}
+
+function LayoutApp({ children }) {
+  return (
+    <>
+      <Header />
+      <Main>
+        {children}
+      </Main>
+      <Footer />
+    </>
+  )
+}
+
+
+const Categorias = ({ categoriaName, numberItens = 0 }) => {
+  let itens = []
+  for (let i = 0; i < numberItens; i++) {
+    itens.push(<span key={i} className="item">Item {i}</span>)
+  }
+  return (
+    <div className="recomendados">
+      <h3>{categoriaName || "Não tem nome"}</h3>
+      <section className="container-itens">
+        {
+          itens
+        }
+      </section>
+    </div>
+  )
+}
+
+const ThumbNail = styled.div`
+  text-align: center;
+  width: 100%;
+  height: 200px;
+  background-color: ${props => props.isOn === true ? "#909090" : "#ce2525"};
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 7px;
+  gap: 10px;
+  
+  span{
+    color: #fff;
+    scroll-snap-align: center;
+    background-color: #202020;
+    overflow-wrap: break-word;
+  }
+  
+  span:hover{
+    cursor: pointer;
+    transition:   background-color 300ms linear;
+    background-color: #3f1616;
+  }
+
+`
+
+
+const Home = () => {
+  return (
+    <>
+      <ThumbNail isOn={true}>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+      </ThumbNail>
+
+      <Categorias
+        categoriaName={"Recomendados"}
+        numberItens={10}
+      />
+      <Categorias
+        categoriaName={"Populares"}
+        numberItens={10}
+      />
+
+      <Categorias
+        categoriaName={"Recentes"}
+        numberItens={10}
+      />
+
+    </>
+  )
+}
+
+const Search = () => {
+  return (
+    <div>
+      Conteudo Search
+    </div>
+  )
+}
+
+const Upload = () => {
+  return (
+    <div>
+      Conteudo Upload
+    </div>
+  )
+}
+
+const Notify = () => {
+  return (
+    <div>
+      Conteudo Notify
+    </div>
+  )
+}
+
+const ErrorNotFind = () => {
+  return (
+    <h3 className="center">Error Not a Find - Recurso não foi encontrado :(</h3>
+  )
+}
+
+
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" index element={
+          <LayoutApp>
+            <Home />
+          </LayoutApp>
+        } />
+
+        <Route path="/search" element={
+          <LayoutApp>
+            <Search />
+          </LayoutApp>
+        } />
+
+        <Route path="/upload" element={
+          <LayoutApp>
+            <Upload />
+          </LayoutApp>
+        } />
+
+        <Route path="/notify" element={
+          <LayoutApp>
+            <Notify />
+          </LayoutApp>
+        } />
+
+        <Route path="/*" element={<ErrorNotFind />} />
+
+      </Routes>
+
+    </BrowserRouter>
+  )
+
+}
+
+
+
+:root {
+  --sombra-suave: rgba(82, 69, 69, 0.685);
+  --color--principal: #221f1f;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  box-shadow: 0px 2px 3px var(--sombra-suave);
+  height: 50px;
+  gap: 10px;
+}
+
+.header h1 {
+  text-align: center;
+  font-variant: small-caps;
+  font-size: 1.7rem;
+  color: var(--color--principal);
+}
+
+.header menu {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color--principal);
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  width: 100%;
+  flex-grow: 1;
+  flex-basis: 300px;
+}
+
+.footer {
+  padding: 8px 10px;
+  box-shadow: 0px -3px 3px var(--sombra-suave);
+  height: 50px;
+}
+
+.nav {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.nav a {
+  color: var(--color--principal);
+  cursor: pointer;
+  padding: 6px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+
+
+
+.recomendados {
+  padding: 10px;
+  width: 100%;
+}
+
+.recomendados h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.container-itens {
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  overflow-x: auto;
+}
+
+.container-itens span {
+  text-align: center;
+  border-radius: 10px;
+  flex-shrink: 0;
+  background-color: #909090;
+  height: 130px;
+  width: 100px;
+  cursor: pointer;
+}
+
+/* .thumbnail {
+  text-align: center;
+  width: 100%;
+  height: 200px;
+  background-color: #909090;
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 7px;
+  gap: 10px;
+}
+
+.thumbnail::-webkit-scrollbar {
+  display: none;
+}
+
+.thumbnail span {
+  color: #ffff;
+  scroll-snap-align: center;
+  background-color: #202020;
+  overflow-wrap: break-word;
+} */

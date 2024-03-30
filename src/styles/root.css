@@ -1,0 +1,33 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+:root {
+  font-size: 90%;
+  font-family: 'Roboto Slab', serif;
+  text-rendering: optimizeLegibility;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.render {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100dvh;
+  max-height: calc(100vh - 10px);
+  max-width: 650px;
+  
+}
+
+.iconLook{
+  color: #fff;
+}

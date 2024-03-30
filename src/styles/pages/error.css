@@ -1,0 +1,41 @@
+.container-error{
+  border-radius: 10px;
+  width: calc(100% - 50px);
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  background-color: #c1bed825;
+}
+.container-error img{
+  -webkit-filter: saturate(0);
+  filter: saturate(0);
+  padding: 5px;
+  border-radius: 50%;
+  width: 200px;
+}
+.container-error h2{
+  font-weight: 600;
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+}
+.container-error p{
+  color: rgb(60, 57, 57);
+  font-size: 1.2rem;
+}
+.container-error button{
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.container-error a{
+  color: rgb(30, 94, 213);
+}
+.container-error a:hover{
+  cursor: pointer;
+  color: #ff0000;
+
+}

@@ -1,0 +1,31 @@
+.footer{
+  padding: 10px 5px;
+  height: 50px;
+  box-shadow: 0 0 4px 2px rgba(57, 60, 106, 0.534);
+  background-color: hsl(226, 45%, 32%);
+}
+
+.footer nav{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 5px;
+}
+
+.footer .iconLook{
+  color: rgb(230, 236, 240);
+  padding: 5px 20px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.active{
+  border-top-right-radius: 10px;
+  padding: 3px 0px;
+  border-top-left-radius: 10px;
+  border-top: 2px solid #000;
+}

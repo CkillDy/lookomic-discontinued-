@@ -1,0 +1,16 @@
+.container-slide{
+  width: 100%;
+  height:250px;
+  padding: 5px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+}
+
+.container-slide::-webkit-scrollbar{
+  display: none;
+}

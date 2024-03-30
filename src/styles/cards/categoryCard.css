@@ -1,0 +1,31 @@
+.articleCard{
+  margin-top: 20px;
+  padding: 10px 5px;
+}
+
+.articleCard h2{
+  margin-left: 5px;
+  color: #000;
+  font-size: 1.5rem;
+}
+
+.articleCard p{
+  margin-left: 10px;
+  color: #000;
+  font-size: 1.1rem;
+}
+.articleCard picture {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  padding: 10px;
+}
+.articleCard picture::-webkit-scrollbar{
+  display: none;
+}

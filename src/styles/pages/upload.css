@@ -1,0 +1,360 @@
+.board-file{
+  margin-top: 10px;
+}
+.upload-container{
+   padding: 10px;
+   user-select: none;
+ }
+
+.upload-file{
+  border-radius: 10px;
+  background-color: #c1a7ff;
+  border: 2px solid rgb(155, 103, 214);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  cursor: all-scroll;
+  gap: 5px;
+
+}
+.upload-file img{
+  opacity: 0.9;
+  width: 80px;
+}
+.upload-file h2{
+  color: #141110;
+  font-size: 1.3rem;
+}
+.upload-file p{
+  color: #000000bd;
+  font-size: .9rem;
+}
+.upload-file input{
+  display: none;
+}
+
+.upload-file label{
+  color: #fff;
+  display: block;
+  padding: 7px;
+  background-color:  #5f47ff;
+  border: 1px solid rgb(31, 81, 146);
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.render-preview{
+  margin-top: 19px;
+}
+.render-preview h2{
+  color: #141110;
+  font-size: 1.2rem;
+  margin-bottom:5px;
+}
+.render-preview p{
+  color: #38312f;
+  font-size: .9rem;
+}
+.render-preview button{
+  color: #fff;
+  font-size: .9rem;
+  margin-top: 8px;
+   margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: 7px;
+  background-color:  rgb(89, 72, 202);
+  border: 1px solid rgb(165, 144, 255);
+  padding: 8px;
+  outline: none;
+}
+
+.page-container{
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 5px;
+}
+
+.file-page{
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #808080;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 10px;
+  border-radius: 4px;
+  transition: background-color 300ms ease-out ;
+  animation: suavizarSaida 600ms ease-out;
+}
+.file-page:hover{
+  cursor:grab;
+  background-color: #e6ebf5;
+}
+.file-page:active{
+  background-color: #fbacff;
+}
+
+.content-page{
+  width: 100%;
+}
+
+.file-page img{
+  border: 1px solid #a29692;
+  font-size: .8rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2px;
+  width: 50px;
+  height: 70px;
+  display: inline-block;
+}
+.file-page h3{
+  font-size: 1.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: calc(100vw - 200px);
+  text-overflow: ellipsis;
+}
+.file-page time{
+  display: inline-block;
+  margin-top: 5px;
+  color: #38312f;
+  font-size: .9rem;
+}
+.file-page button{
+  background-color: rgb(250, 63, 63);
+  font-size: .9rem;
+  border: none;
+}
+
+.dragOpacity{
+  border: 2px dotted #141110;
+  opacity: 70%;
+}
+
+
+/* STEP 2 */
+
+.upload-step{
+  padding: 0px;
+  width: 100%;
+}
+
+.next-button{
+  cursor:pointer;
+  font-weight: 600;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  border: none;
+  margin-top: 7px;
+  background-color: #6098ff;
+  border-radius: 5px;
+  padding: 9px 13px;
+}
+
+.group-content-file{
+  margin-top: 7px;
+  background-color: #d7c2f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 18px;
+  padding: 5px;
+  max-width: 500px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,0);
+}
+
+.input-group{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 5px;
+  background-color: rgb(173, 159, 209);
+  padding: 7px;
+}
+
+.no-colum input{
+  scale: 1.3;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
+select.container-category, select.container-modeRead{
+  color: #fff;
+  cursor: pointer;
+  background-color: #584bca;
+  border: 1px solid #645d5d;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.remove-category-button{
+  cursor: pointer;
+  margin-top: 4px;
+  margin-left: 5px;
+  color: #fff;
+  background-color: rgb(233, 43, 43);
+  padding: 4px 6px;
+  border: none;
+  font-size: .8rem;
+  border-radius: 40%;
+}
+
+.group-content-file input{
+  border-radius: 5px;
+  border: none;
+  font-size: 1.1rem;
+  outline: none;
+  padding: 5px;
+}
+.group-content-file input:focus{
+  outline: 1px solid #9c8782;
+}
+
+.group-content-file textarea{
+  font-size: 1.1rem;
+  outline: none;
+  resize: none;
+  padding: 5px;
+  border: none;
+  height: 120px;
+}
+.group-content-file textarea:focus{
+  outline: 1px solid #9c8782;
+}
+
+.group-content-file p, .group-content-file label{
+  font-size: 1.1rem;
+}
+
+/* STEP 3 */
+
+.group-preview-last{
+  background-color: #d7c2f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 8px;
+  padding: 10px;
+  max-width: 500px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,0);
+}
+
+.group-preview-last h2{
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.group-render-preview{
+  margin-bottom: 5px;
+  user-select: text;
+  cursor: text;
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid #645d5d;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.group-render-preview img{
+  width: 100px;
+  height: 140px;
+  float:left;
+  clear: both;
+  object-fit: cover;
+  object-position: cover;
+  margin-bottom: 10px;
+}
+.group-render-preview p{
+  width: 100%;
+  margin-right: 7px;
+  padding: 5px;
+  margin-top:3px;
+}
+.group-render-preview button{
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 50px);
+  margin-top: 13px;
+  padding: 10px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+/* .group-preview-last button{
+  width: 150px;
+  margin-top: 13px;
+  padding: 10px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+
+
+.group-preview-last strong{
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 5px;
+}
+ */
+/* .group-preview-last > p{
+  margin-bottom: 5px;
+  user-select: text;
+  cursor: text;
+  padding: 7px;
+  border-radius: 7px;
+  border: 1px solid #645d5d;
+}
+ */
+button:hover, .upload-step label:hover{
+  filter: opacity(70%);
+}
+
+.isThumb{
+  position: relative;
+}
+
+.isThumb::before{
+  content: "A Capa Escolhida";
+  top: 0;
+  left: 0;
+  position: absolute;
+  font-size: 0.9rem;
+  color: #fff;
+  padding: 3px;
+  background-color: #171926;
+}
+
+@keyframes suavizarSaida {
+  from{
+    opacity: 10%;
+  }
+  to{
+    opacity: 100%;
+  }
+  
+}

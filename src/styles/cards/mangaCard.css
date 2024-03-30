@@ -1,0 +1,51 @@
+
+.containerMangaCard{
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border-radius: 4px;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #909090;
+  padding: 7px;
+}
+
+.containerMangaCard:hover{
+  cursor: pointer;
+  opacity: 65%;
+}
+
+.containerMangaCard span{
+  top: 15px;
+  padding: 5px;
+  font-size: 1rem;
+  background-color: #304090;
+  position: absolute;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.containerMangaCard img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background-color: #00209050;
+}
+.containerMangaCard legend{
+  text-align: center;
+  width: 100%;
+  padding: 5px;
+  margin: 0 auto;
+}
+.containerMangaCard h3{
+  color: #101010;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.containerMangaCard p{
+  font-size: 1rem;
+  font-weight: 500;
+}

@@ -1,0 +1,11 @@
+.main{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  width: 100%;
+  flex-grow: 1;
+  flex-basis: calc(100vh - 100px);
+  border-left: 2px solid rgb(104, 116, 204);
+  border-right: 2px solid rgb(106, 119, 212);
+}
